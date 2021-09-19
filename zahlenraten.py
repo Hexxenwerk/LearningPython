@@ -5,13 +5,14 @@ scope: dict = {min: 1, max: 100}
 name: str = ""
 
 while wantToPlay:
-    if name:
-        name: str = input("Super. Viel Spaß. Wie ist dein Name? ")
+    if not name:
+        name = input("Super. Viel Spaß. Wie ist dein Name? ")
     else:
         print(f"Super. Viel Spaß {name}")
 
     randNum: int = random.randint(scope[min], scope[max])
-    eingabe: int = -1
+    eingabe: int = 0
+    counter: int = 0
 
     while randNum != eingabe:
         eingabe: int = int(input(f"{name}, gib eine Zahl zwischen {scope[min]} und {scope[max]} ein: "))
@@ -29,8 +30,14 @@ while wantToPlay:
         elif randNum < eingabe:
             print("Deine Eingabe war zu hoch. Versuch es noch mal.")
 
-    print(f"Super. Du hast die Zufallszahl erraten: {randNum}")
+        counter += 1
+        if counter > 4:
+            break
+
+    if counter > 4:
+        print(f"Du hast es nach {counter} Versuchen nicht geschafft die Zahl zu erraten.")
+    else:
+        print(f"Super. Du hast die Zufallszahl erraten: {randNum}")
     wantToPlay: bool = "ja" == input("Möchtest du nochmal spielen? ").lower().strip()
 
-
-print("Schade. Bis zum nächsten Mal")
+print("Schade. Bis zum nächsten Mal.")
