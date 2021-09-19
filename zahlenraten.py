@@ -12,7 +12,6 @@ while wantToPlay:
 
     randNum: int = random.randint(scope[min], scope[max])
     eingabe: int = -1
-    print(randNum)
 
     while randNum != eingabe:
         eingabe: int = int(input(f"{name}, gib eine Zahl zwischen {scope[min]} und {scope[max]} ein: "))
