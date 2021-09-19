@@ -5,7 +5,7 @@ scope: dict = {min: 1, max: 100}
 name: str = ""
 
 while wantToPlay:
-    if name == "":
+    if name:
         name: str = input("Super. Viel Spaß. Wie ist dein Name? ")
     else:
         print(f"Super. Viel Spaß {name}")
