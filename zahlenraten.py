@@ -13,14 +13,13 @@ eingabe: int = 0
 
 while zufallszahl != eingabe:
     eingabe: int = int(input(f"{name}, gib eine Zahl zwischen {bereich[min]} und {bereich[max]} ein: "))
+
     if zufallszahl > eingabe + bereich[max] * 0.2:
         print("Deine Eingabe war viel zu niedrig. Versuche es noch mal")
-        continue
-    if zufallszahl > eingabe:
+    elif zufallszahl > eingabe:
         print("Deine Eingabe war zu niedrig. Versuch es noch mal.")
-    elif zufallszahl < eingabe - bereich[max] * 0.2:
+    elif zufallszahl < abs(eingabe - bereich[max] * 0.2):
         print("Deine Eingabe war viel zu hoch. Versuch es noch mal.")
-        continue
     elif zufallszahl < eingabe:
         print("Deine Eingabe war zu hoch. Versuch es noch mal.")
 
