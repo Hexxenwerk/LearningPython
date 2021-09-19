@@ -1,26 +1,37 @@
 import random
 
-wantToPlay: bool = "ja" in input("Möchtest du Zahlenraten spielen? ").lower()
+wantToPlay: bool = "ja" == input("Möchtest du Zahlenraten spielen? ").lower().strip()
+scope: dict = {min: 1, max: 100}
+name: str = ""
 
-if not wantToPlay:
-    print("Schade. Bis zum näcsten Mal")
-    exit(0)
+while wantToPlay:
+    if name == "":
+        name: str = input("Super. Viel Spaß. Wie ist dein Name? ")
+    else:
+        print(f"Super. Viel Spaß {name}")
 
-name: str = input("Super. Viel Spaß. Wie ist dein Name? ")
-bereich = {min: 1, max: 100}
-zufallszahl: int = random.randint(bereich[min], bereich[max])
-eingabe: int = 0
+    randNum: int = random.randint(scope[min], scope[max])
+    eingabe: int = -1
+    print(randNum)
 
-while zufallszahl != eingabe:
-    eingabe: int = int(input(f"{name}, gib eine Zahl zwischen {bereich[min]} und {bereich[max]} ein: "))
+    while randNum != eingabe:
+        eingabe: int = int(input(f"{name}, gib eine Zahl zwischen {scope[min]} und {scope[max]} ein: "))
 
-    if zufallszahl > eingabe + bereich[max] * 0.2:
-        print("Deine Eingabe war viel zu niedrig. Versuche es noch mal")
-    elif zufallszahl > eingabe:
-        print("Deine Eingabe war zu niedrig. Versuch es noch mal.")
-    elif zufallszahl < abs(eingabe - bereich[max] * 0.2):
-        print("Deine Eingabe war viel zu hoch. Versuch es noch mal.")
-    elif zufallszahl < eingabe:
-        print("Deine Eingabe war zu hoch. Versuch es noch mal.")
+        if randNum > eingabe + scope[max] * 0.3:
+            print("Deine Eingabe war viel zu niedrig. Versuche es noch mal")
+        elif randNum > eingabe + scope[max] * 0.2:
+            print("Deine Eingabe war etwas zu niedrig. Versuche es noch mal")
+        elif randNum > eingabe:
+            print("Deine Eingabe war zu niedrig. Versuch es noch mal.")
+        elif randNum < abs(eingabe - scope[max] * 0.3):
+            print("Deine Eingabe war viel zu hoch. Versuch es noch mal.")
+        elif randNum < abs(eingabe - scope[max] * 0.2):
+            print("Deine Eingabe war etwas zu hoch. Versuch es noch mal.")
+        elif randNum < eingabe:
+            print("Deine Eingabe war zu hoch. Versuch es noch mal.")
 
-print(f"Super. Du hast die Zufallszahl erraten: {zufallszahl}")
+    print(f"Super. Du hast die Zufallszahl erraten: {randNum}")
+    wantToPlay: bool = "ja" == input("Möchtest du nochmal spielen? ").lower().strip()
+
+
+print("Schade. Bis zum nächsten Mal")
