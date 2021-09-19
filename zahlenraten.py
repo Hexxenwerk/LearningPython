@@ -1,7 +1,6 @@
 import random
 
 isPlay: bool = "ja" in input("Möchtest du Zahlenraten spielen? ").lower()
-name: str = ""
 
 if not isPlay:
     print("Schade. Bis zum näcsten Mal")
