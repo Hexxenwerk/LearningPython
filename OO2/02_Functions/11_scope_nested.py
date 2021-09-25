@@ -15,6 +15,7 @@ def outer():
     inner()
     print(f"outer x: {x}")
 
+
 print(f"global x: {x}")
 outer()
 print(f"global x: {x}")
