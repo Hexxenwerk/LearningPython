@@ -35,6 +35,15 @@ def get_numbers_struct(numbers) -> dict:
     return numbers_struct
 
 
+def print_results(numbers, numbers_struct):
+    print("Alle Zahlen sind:", numbers)
+    print("Alle positiven Zahlen sind:", numbers_struct["positiv"])
+    print("Alle negativen Zahlen sind:", numbers_struct["negativ"])
+    print("Die Summe aller Zahlen ist:", numbers_struct["sum_all"])
+    print("Die Summe der positiven Zahlen ist:", numbers_struct["sum_pos"])
+    print("Die Summe der negativen Zahlen ist:", numbers_struct["sum_neg"])
+
+
 def main():
     print("Gib eine Zahl pro Zeile ein. Gib zum Abschließen eine 0 ein.")
     numbers: list = get_numbers()
@@ -42,12 +51,7 @@ def main():
     if not numbers:
         print("Die Liste ist leer. Keine Operation möglich.")
         exit(0)
-    print("Alle Zahlen sind:", numbers)
-    print("Alle positiven Zahlen sind:", numbers_struct["positiv"])
-    print("Alle negativen Zahlen sind:", numbers_struct["negativ"])
-    print("Die Summe aller Zahlen ist:", numbers_struct["sum_all"])
-    print("Die Summe der positiven Zahlen ist:", numbers_struct["sum_pos"])
-    print("Die Summe der negativen Zahlen ist:", numbers_struct["sum_neg"])
+    print_results(numbers, numbers_struct)
 
 
 exit(main())
