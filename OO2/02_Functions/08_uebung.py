@@ -1,7 +1,6 @@
 def getintput() -> int:
     try:
-        zahl: int = int(input("> "))
-        return zahl
+        return int(input("> "))
     except ValueError:
         print("Die Eingabe muss numerisch sein.")
         return getintput()
