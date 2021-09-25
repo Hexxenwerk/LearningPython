@@ -22,6 +22,7 @@ def factorial_recursive(num) -> int:
         return num * factorial_recursive(num - 1)
 
 
-print(factorial_iterative_1(5))
-print(factorial_iterative_2(5))
-print(factorial_recursive(5))
+zahl: int = 7
+print(factorial_iterative_1(zahl))
+print(factorial_iterative_2(zahl))
+print(factorial_recursive(zahl))
