@@ -14,9 +14,10 @@ def get_background_years():
 
 
 def main():
-    name: str = input("Wie ist dein Name? ")
-    years = get_background_years()
-    greeting(name, years)
+    while True:
+        name: str = input("Wie ist dein Name? ")
+        years = get_background_years()
+        greeting(name, years)
 
 
 exit(main())
