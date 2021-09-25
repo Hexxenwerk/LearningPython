@@ -3,6 +3,7 @@ def show_numbers_1(n1: int, n2: int, n3=0):
 
 
 def show_numbers_2(*numbers):
+    print(numbers, type(numbers))
     print(sum(numbers))
 
 
