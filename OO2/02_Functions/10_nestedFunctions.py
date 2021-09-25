@@ -1,24 +1,24 @@
 y: int = 20
 
 
-def my_outer_function(user_name: str):
+def greeting(user_name: str):
     print(f"Hello {user_name}")
 
     x: int = 10
 
-    def my_inner_function():
-        print("Hello innter function")
+    def function2():
+        print("Hello inner function")
 
         user_name: str = "Sarah"
         print(f"Hello {user_name}")
         print(x)
         print(y)
 
-    my_inner_function()
+    function2()
     print(f"Willkommen {user_name}")
 
 
-my_outer_function("Sara")
+greeting("Sara")
 
 
 # Closure:
