@@ -1,15 +1,15 @@
-def getintput() -> int:
+def get_intput() -> int:
     try:
         return int(input("> "))
     except ValueError:
         print("Die Eingabe muss numerisch sein.")
-        return getintput()
+        return get_intput()
 
 
-def getnumbers() -> list:
+def get_numbers() -> list:
     numbers: list = []
     while True:
-        numbers.append(getintput())
+        numbers.append(get_intput())
         if numbers[-1] == 0:
             return numbers[:-1]
 
@@ -37,7 +37,7 @@ def get_numbers_struct(numbers) -> dict:
 
 def main():
     print("Gib eine Zahl pro Zeile ein. Gib zum Abschließen eine 0 ein.")
-    numbers: list = getnumbers()
+    numbers: list = get_numbers()
     numbers_struct: dict = get_numbers_struct(numbers)
     if not numbers:
         print("Die Liste ist leer. Keine Operation möglich.")
