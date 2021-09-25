@@ -9,10 +9,9 @@ def getintput() -> int:
 def getnumbers() -> list:
     numbers: list = []
     while True:
-        zahl: int = getintput()
-        if not zahl:
-            return numbers
-        numbers.append(zahl)
+        numbers.append(getintput())
+        if numbers[-1] == 0:
+            return numbers[:-1]
 
 
 def get_numbers_struct(numbers) -> dict:
