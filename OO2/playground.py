@@ -8,9 +8,9 @@ class Pet:
 
 
 class Cat(Pet):
-    pass
+    def speak(cls):
+        return True
 
 
 myCat = Cat("Mietz", 8)
-myCat.age = 12
 print(myCat.name, myCat.age)
