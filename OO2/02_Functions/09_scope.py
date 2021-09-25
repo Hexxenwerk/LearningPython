@@ -12,7 +12,7 @@ def greeting_2(user_name: str):
 
 def greeting_3(user_name: str):
     global location
-    location = "Aachen"
+    location: str = "Aachen"
     print(f"Hello {user_name} von {location}")
 
 
