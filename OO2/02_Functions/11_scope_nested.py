@@ -1,5 +1,4 @@
-x: int = 5
-y: int = 100
+x, y = 5, 100
 
 
 def outer():
@@ -8,8 +7,7 @@ def outer():
     def inner():
         nonlocal x
         global y
-        x = 20
-        y = 200
+        x, y = 20, 200
         print(f"inner x: {x}")
 
     inner()
