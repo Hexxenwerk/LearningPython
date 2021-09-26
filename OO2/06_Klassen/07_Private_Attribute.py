@@ -9,6 +9,7 @@ class Teilnehmer:
 
 t1 = Teilnehmer("Ingo", "Maier")
 
+# Show instance-based private attribute:
 print(t1.first_name, t1.last_name, t1._Teilnehmer__bonus)
 print(t1.__dict__)
 t1._Teilnehmer__bonus = 700
