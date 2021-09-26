@@ -4,13 +4,11 @@ class Car:
         self.color = color
         self.model = model
 
-    @staticmethod
-    def parking():
-        print("I am parking")
+    def parking(self):
+        print(f"I am parking my {self.model}")
 
-    @staticmethod
-    def cleaning():
-        print("I am cleaning")
+    def cleaning(self):
+        print(f"I am cleaning my {self.model}")
 
 
 class Audi(Car):
@@ -18,8 +16,7 @@ class Audi(Car):
         super().__init__(kz, color, model)
         self.gps = gps
 
-    @staticmethod
-    def gps_navigate():
+    def gps_navigate(self):
         print("I am navigating")
 
 
@@ -28,8 +25,7 @@ class VW(Car):
         super().__init__(kz, color, model)
         self.schiebedach = schiebedach
 
-    @staticmethod
-    def schiebedach_open():
+    def schiebedach_open(self):
         print("Opening Panorama Window")
 
 
@@ -38,8 +34,7 @@ class Tesla(Car):
         super().__init__(kz, color, model)
         self.battery = battery
 
-    @staticmethod
-    def charge_battery():
+    def charge_battery(self):
         print("I am recharging")
 
 
