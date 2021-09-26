@@ -2,6 +2,10 @@ from pathlib import Path
 
 
 def get_files_in_dir(path: str, selector: str) -> list:
+    if not path.strip():
+        path = "."
+    if not selector.strip():
+        selector = "*.txt"
     files: list = []
     location = Path(path)
     for f in location.glob(selector):
