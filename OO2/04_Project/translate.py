@@ -1,8 +1,8 @@
 from googletrans import Translator
 
 
-def translate_de(line: str) -> str:
+def translate(line: str, lang="de") -> str:
     if not line.strip():
         return ""
     t = Translator()
-    return t.translate(line, "de").text
+    return t.translate(line, lang).text

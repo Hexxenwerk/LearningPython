@@ -6,7 +6,7 @@ def get_files_in_dir(path: str, selector: str) -> list:
         path = "."
     if not selector.strip():
         selector = "*.txt"
-    files: list = []
+    files = []
     location = Path(path)
     for f in location.glob(selector):
         files.append(f"{path}/{f.name}")
@@ -15,7 +15,7 @@ def get_files_in_dir(path: str, selector: str) -> list:
 
 
 def read_file_content(path: str, count: int) -> list:
-    file = open(path, mode='r')
-    content = file.read().splitlines()
-    file.close()
+    with open(path, mode='r', encoding="utf-8") as file:
+        content = file.read().splitlines()
+
     return content[:count]
