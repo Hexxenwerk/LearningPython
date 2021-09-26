@@ -1,16 +1,10 @@
-class Pet:
-    def __init__(self, name: str, age: int):
-        self.age = age
+class Person:
+    def __init__(self, name: str):
         self.name = name
 
-    def hello(self):
-        print(self.name)
+    def talk(self, say: str):
+        print(f"{self.name} says {say}")
 
 
-class Cat(Pet):
-    def speak(cls):
-        return True
-
-
-myCat = Cat("Mietz", 8)
-print(myCat.name, myCat.age)
+p1 = Person("Suzi")
+p1.talk("Hello")
