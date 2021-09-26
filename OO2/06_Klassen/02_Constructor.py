@@ -11,10 +11,7 @@ t1 = Teilnehmner("Ingo", "Maier", "Hamburg", "Audi")
 t2 = Teilnehmner("Sara", "Maier", "Hamburg", "Tesla")
 t3 = Teilnehmner("Liane", "Maier", "Hamburg")
 
-liste_teilnehmende = []
-liste_teilnehmende.append(t1)
-liste_teilnehmende.append(t2)
-liste_teilnehmende.append(t3)
+liste_teilnehmende = [t1, t2, t3]
 
 counter = 1
 
