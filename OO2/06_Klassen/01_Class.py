@@ -15,7 +15,5 @@ t2 = Teilnehmner("Sara")
 t1.show_name()
 t2.show_name()
 
-t1.teilnehmner_name = "Idiot"
-
 t1.paymnent()
 t2.paymnent()
