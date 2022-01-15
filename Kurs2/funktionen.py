@@ -27,23 +27,28 @@ def funkt_5(monat: str):
         print(f'{i}: {monat[i]}')
 
 
-def funkt_6(monat_1, monat_2: str) -> List[Union[str, str]]:
+def funkt_6(monat_1, monat_2: str) -> List[Union[str, int]]:
     result = {}
     for x in monat_1:
         if x in monat_2:
-            result[x] = True
+            result[x] = result.get("x", 0) + 1
     return sorted(result.keys())
 
 
-def funkt_7(monat_1, monat_2: str) -> List[Union[str, str]]:
+def funkt_7(monat_1, monat_2: str) -> List[Union[str, int]]:
     result = {}
     for x in monat_1:
         if x not in monat_2:
-            result[x] = True
+            result[x] = result.get("x", 0) + 1
     for x in monat_2:
         if x not in monat_1:
-            result[x] = True
-        return sorted(result.keys())
+            result[x] = result.get("x", 0) + 1
+    return sorted(result.keys())
+
+
+def funkt_8(*monate) -> list:
+    print('==================================')
+    return [funkt_1(monat) for monat in monate]
 
 
 def main():
@@ -54,6 +59,7 @@ def main():
     funkt_5("Januar")
     print(funkt_6("Dezember", "November"))
     print(funkt_7("Dezember", "Januar"))
+    print(funkt_8("Januar", "März", "Juni"))
 
 
 if __name__ == '__main__':
