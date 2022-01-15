@@ -29,7 +29,7 @@ def funkt_6(monat1, monat2: str) -> set:
     for x in monat1:
         if x in monat2:
             result.append(x)
-        return set(result)
+    return set(result)
 
 
 def funkt_7(monat1, monat2: str) -> set:
@@ -39,7 +39,7 @@ def funkt_7(monat1, monat2: str) -> set:
             result.append(x)
         if x not in monat1:
             result.append(x)
-    return set(result)
+    return set(sorted(result))
 
 
 def main():
@@ -48,8 +48,8 @@ def main():
     funkt_3("September")
     funkt_4("Oktober")
     funkt_5("Januar")
-    funkt_6("Dezember", "November")
-    print(funkt_7("Dezember", "November"))
+    print(funkt_6("Dezember", "November"))
+    print(funkt_7("Dezember", "Januar"))
 
 
 if __name__ == '__main__':
