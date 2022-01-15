@@ -1,5 +1,5 @@
 def funkt_1(monat: str):
-    [print(f'{n + 1}: {x}') for n, x in enumerate(monat[0:5]) if monat == "Dezember"]
+    [print(f'{n + 1}: {x}') for n, x in enumerate(monat)]
 
 
 def funkt_2(monat: str):
@@ -19,11 +19,17 @@ def funkt_4(monat: str):
         print(f'{counter}: {x}')
 
 
+def funkt_5(monat: str):
+    for i in range(len(monat)):
+        print(f'{i}: {monat[i]}')
+
+
 def main():
     funkt_1("Dezember")
     funkt_2("November")
     funkt_3("September")
     funkt_4("Oktober")
+    funkt_5("Januar")
 
 
 if __name__ == '__main__':
