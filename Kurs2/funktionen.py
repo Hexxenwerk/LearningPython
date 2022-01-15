@@ -1,5 +1,5 @@
 def funkt_neu(monat):
-    [print(x) for x in monat[0:2] if monat == "Dezember"]
+    [print(f'{n}: {x}') for n, x in enumerate(monat[0:2]) if monat == "Dezember"]
 
 
 def main():
