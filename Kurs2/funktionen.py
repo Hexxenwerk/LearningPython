@@ -24,12 +24,32 @@ def funkt_5(monat: str):
         print(f'{i}: {monat[i]}')
 
 
+def funkt_6(monat1, monat2: str) -> set:
+    result = []
+    for x in monat1:
+        if x in monat2:
+            result.append(x)
+        return set(result)
+
+
+def funkt_7(monat1, monat2: str) -> set:
+    result = []
+    for x in monat1:
+        if x not in monat2:
+            result.append(x)
+        if x not in monat1:
+            result.append(x)
+    return set(result)
+
+
 def main():
     funkt_1("Dezember")
     funkt_2("November")
     funkt_3("September")
     funkt_4("Oktober")
     funkt_5("Januar")
+    funkt_6("Dezember", "November")
+    print(funkt_7("Dezember", "November"))
 
 
 if __name__ == '__main__':
