@@ -1,3 +1,6 @@
+from typing import List, Union
+
+
 def funkt_1(monat: str):
     [print(f'{n + 1}: {x}') for n, x in enumerate(monat)]
 
@@ -24,22 +27,23 @@ def funkt_5(monat: str):
         print(f'{i}: {monat[i]}')
 
 
-def funkt_6(monat1, monat2: str) -> set:
-    result = []
-    for x in monat1:
-        if x in monat2:
-            result.append(x)
-    return set(result)
+def funkt_6(monat_1, monat_2: str) -> List[Union[str, str]]:
+    result = {}
+    for x in monat_1:
+        if x in monat_2:
+            result[x] = True
+    return sorted(result.keys())
 
 
-def funkt_7(monat1, monat2: str) -> set:
-    result = []
-    for x in monat1:
-        if x not in monat2:
-            result.append(x)
-        if x not in monat1:
-            result.append(x)
-    return set(sorted(result))
+def funkt_7(monat_1, monat_2: str) -> List[Union[str, str]]:
+    result = {}
+    for x in monat_1:
+        if x not in monat_2:
+            result[x] = True
+    for x in monat_2:
+        if x not in monat_1:
+            result[x] = True
+        return sorted(result.keys())
 
 
 def main():
