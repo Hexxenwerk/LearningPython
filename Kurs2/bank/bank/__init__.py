@@ -5,3 +5,6 @@ class Bank:
         self.land = land
         self.firmensitz = firmensitz
         self.name = name
+
+    def __str__(self):
+        return f'{" - ".join([self.name, self.firmensitz, self.land, self.bic])}'
