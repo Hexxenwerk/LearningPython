@@ -9,11 +9,11 @@ def main():
     naspa = Bank(name="Nassauische Sparkasse", firmensitz="Wiesbaden", land="DE", bic="NASSDE55XXX", blz=51050015)
     targo = Bank(name="TARGOBANK AG", firmensitz="Düsseldorf", land="DE", bic="CMCIDEDDXXX", blz=30020900)
 
-    person_1 = person.Person(person.NewAutomated("Barney", "Geröll", datetime(1988, 12, 22), "GeHeiM", True, "m"))
-    person_2 = person.Person(person.NewInteractive())
+    person_1 = person.Person("Barney", "Geröllheimer", datetime(1988, 12, 22), "GeHeiM", True, "m")
+    person_2 = person.Person.new()
 
     konto_1 = Konto(besitzer=person_1, bank=naspa)
-    konto_2 = Konto(besitzer=person_2, bank=targo)
+    konto_2 = Konto(besitzer=person_2, bank=targo, kontostand=100)
 
     print(naspa)
     print(targo)
@@ -29,6 +29,12 @@ def main():
 
     print(konto_1)
     print(konto_2)
+
+    print(f'Anzahl Konten: {len(Konto.anzahl_konten)}')
+
+    del konto_1, konto_2, person_1, person_2
+
+    print(f'Anzahl Konten: {len(Konto.anzahl_konten)}')
 
 
 if __name__ == '__main__':
