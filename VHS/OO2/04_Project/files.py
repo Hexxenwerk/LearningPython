@@ -3,7 +3,7 @@ from pathlib import Path
 
 def get_files_in_dir(path: str, selector: str) -> list:
     if not path.strip():
-        path = "."
+        path = ""
     if not selector.strip():
         selector = "*.txt"
     files = []

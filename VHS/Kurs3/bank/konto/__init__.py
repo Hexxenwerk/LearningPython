@@ -2,8 +2,8 @@ from random import randint
 
 from typing import Dict
 
-from Kurs2.bank.bank import Bank
-from Kurs2.bank.person import Person
+from VHS.Kurs3.bank.bank import Bank
+from VHS.Kurs3.bank.person import Person
 
 
 class Konto:

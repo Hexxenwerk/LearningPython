@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from Kurs2.bank import person
-from Kurs2.bank.bank import Bank
-from Kurs2.bank.konto import Konto
+from VHS.Kurs3.bank import person
+from VHS.Kurs3.bank.bank import Bank
+from VHS.Kurs3.bank.konto import Konto
 
 
 def main():
