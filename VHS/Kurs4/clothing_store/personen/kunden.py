@@ -10,7 +10,7 @@ from VHS.Kurs4.clothing_store.personen import Person
 class Kunde(Person):
     kundennummer = 0
 
-    def __init__(self, vorname: str, nachname: str, geschlecht: genπder):
+    def __init__(self, vorname: str, nachname: str, geschlecht: gender):
         super().__init__(vorname, nachname, geschlecht)
         self._gesamtumsatz = 0.0
         self._umsaetze: Dict[datetime: float]

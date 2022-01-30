@@ -4,14 +4,14 @@ from typing import Union
 
 @dataclass()
 class Artikel:
-    pass
-
-
-@dataclass(Artikel)
-class Kleidung:
     farbe: str
     preis: float
     groesse: Union[float, str]
+
+
+@dataclass()
+class Kleidung(Artikel):
+    pass
 
 
 @dataclass()
