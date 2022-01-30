@@ -2,7 +2,7 @@ import uuid
 from dataclasses import dataclass
 from typing import Union
 
-from VHS.Kurs4.clothing_store.artikel.kleidung import Kleidung
+from VHS.Kurs4.store.artikel.kleidung import Kleidung
 
 
 @dataclass()
