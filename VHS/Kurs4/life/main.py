@@ -23,10 +23,15 @@ def persons_generate() -> List[Mensch]:
     if response.status_code != 200:
         print(f'Invalid status code {response.status_code}')
         sys.exit(1)
-    # data = response.json()
-    # personen_liste.append(
-    # Mensch(ledig=data['data'])
-    # )
+    data = response.json()
+    personen_liste.append(
+        Mensch(ledig=True, wohnort='Hamburg', gewicht=77, vorname=data['data'][0]['name']['firstname']['name'],
+               nachname=data['data'][0]['name']['lastname']['name'],
+               geschlecht=data['data'][0]['name']['firstname']['gender_formatted'], geburtsdatum=datetime(1973, 10, 22),
+               nummer=Counter())
+    )
+    print(personen_liste[0])
+
     return personen_liste
 
 
