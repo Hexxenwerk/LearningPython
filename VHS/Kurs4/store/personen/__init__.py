@@ -1,7 +1,8 @@
 import re
 from dataclasses import dataclass
+from datetime import datetime
 
-
+@dataclass()
 class Gender:
     def __init__(self, geschlecht: str):
         if re.match(r'w(?:eiblich)?$|f(?:rau)?$', geschlecht):
@@ -18,4 +19,5 @@ class Gender:
 class Person:
     vorname: str
     nachname: str
+    geburtsdatum: datetime
     geschlecht: Gender

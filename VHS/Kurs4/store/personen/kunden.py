@@ -2,17 +2,15 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Dict, List
 
-from gender import gender
-
 from VHS.Kurs4.store.artikel import Artikel
-from VHS.Kurs4.store.personen import Person
+from VHS.Kurs4.store.personen import Person, Gender
 
 
 class Kunde(Person):
     kundennummer = 0
 
-    def __init__(self, vorname: str, nachname: str, geschlecht: gender):
-        super().__init__(vorname, nachname, geschlecht)
+    def __init__(self, vorname: str, nachname: str, geburtsdatum: datetime, geschlecht: Gender):
+        super().__init__(vorname, nachname, geburtsdatum, geschlecht)
         self._gesamtumsatz = 0.0
         self._umsaetze: Dict[datetime: float] = {}
         Kunde.kundennummer += 1
@@ -51,12 +49,14 @@ class Kundenliste:
         except ValueError:
             print(f'Fehler: Kunde nicht in Liste: {kunde}')
 
-    def list(self):
-        for kunde in self._kundenliste:
-            print(kunde)
+    def list(self, output=False):
+        if output:
+            for kunde in self._kundenliste:
+                print(kunde)
+        return [kunde for kunde in self._kundenliste]
 
     def last_added(self):
         return self.list()[-1]
 
     def gesamtumsatz(self):
-        return sum(list([kunde.gesamtumsatz() for kunde in self._kundenliste]))
+        return sum([kunde.gesamtumsatz for kunde in self._kundenliste])
