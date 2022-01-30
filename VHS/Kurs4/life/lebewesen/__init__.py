@@ -73,9 +73,6 @@ class Mensch(Lebewesen):
         return f'Es handelt sich um: {self.vorname}, {self.nachname}, Geschlecht: {self.geschlecht} ' \
                f'{self.geburtsdatum.strftime("%d.%m.%Y")}, Ledig: {self.ledig}'
 
-    # def __str__(self):
-    #     return f'{self.vorname} {self.nachname}, geboren: {self.geburtsdatum}'
-
     def geschlechtsumwandlung(self) -> None:
         if self.geschlecht == 'm':
             self.geschlecht = 'w'
