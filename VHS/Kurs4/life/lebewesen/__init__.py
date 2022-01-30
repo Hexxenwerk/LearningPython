@@ -9,13 +9,35 @@ class Counter:
 
 
 @dataclass()
-class Mensch:
+class Lebewesen:
     geschlecht: str
     geburtsdatum: datetime
 
 
 @dataclass()
-class Person(Mensch):
+class Tier(Lebewesen):
+    pass
+
+
+@dataclass()
+class Saeugetier(Tier):
+    kann_fliegen: bool = False
+
+
+@dataclass()
+class Voegel(Tier):
+    geschlecht: str
+    kann_fliegen: bool = False
+
+
+@dataclass()
+class Fische(Tier):
+    geschlecht: str
+    kann_fliegen: bool = False
+
+
+@dataclass()
+class Mensch(Lebewesen):
     ledig: bool
     wohnort: str
     gewicht: float
@@ -48,10 +70,11 @@ class Person(Mensch):
         return self._genanntes_alter
 
     def wird_beschrieben(self) -> str:
-        return f'Es handelt sich um: {self.vorname}, {self.nachname}, {self.geburtsdatum.strftime("%d.%m.%Y")}, Ledig: {self.ledig}'
+        return f'Es handelt sich um: {self.vorname}, {self.nachname}, Geschlecht: {self.geschlecht} ' \
+               f'{self.geburtsdatum.strftime("%d.%m.%Y")}, Ledig: {self.ledig}'
 
-    def __str__(self):
-        return f'{self.vorname} {self.nachname}, geboren: {self.geburtsdatum}'
+    # def __str__(self):
+    #     return f'{self.vorname} {self.nachname}, geboren: {self.geburtsdatum}'
 
     def geschlechtsumwandlung(self) -> None:
         if self.geschlecht == 'm':
@@ -60,3 +83,21 @@ class Person(Mensch):
         elif self.geschlecht == 'w':
             self.geschlecht = 'm'
             self.vorname = 'Markus'
+
+
+@dataclass()
+class Mann(Mensch):
+    fan_fussball_club: str = 'HSV'
+
+    def wird_beschrieben(self) -> str:
+        return f'Es handelt sich um: {self.vorname}, {self.nachname}, Geschlecht: {self.geschlecht} ' \
+               f'{self.geburtsdatum.strftime("%d.%m.%Y")}, Ledig: {self.ledig} und Fan von {self.fan_fussball_club}'
+
+
+@dataclass()
+class Frau(Mensch):
+    ist_schwanger: bool = False
+
+    def wird_beschrieben(self) -> str:
+        return f'Es handelt sich um: {self.vorname}, {self.nachname}, Geschlecht: {self.geschlecht} ' \
+               f'{self.geburtsdatum.strftime("%d.%m.%Y")}, Ledig: {self.ledig} und ist schwanger: {self.ist_schwanger}'
