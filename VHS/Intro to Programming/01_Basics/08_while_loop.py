@@ -15,3 +15,19 @@ while user_input:
 print(zahlen_all)
 print(zahlen_ungerade)
 print(zahlen_gerade)
+
+temperature = 40
+while True:
+    print(temperature)
+    temperature -= 1
+    if temperature == 25:
+        break  # exits the loop
+
+print('Ende')
+
+while True:
+    user_input = input("PLZ: ")
+    if len(user_input) != 5:
+        print('Du must genau 5 Zeichen eingeben!')
+        continue  # jumps to next iteration
+    break

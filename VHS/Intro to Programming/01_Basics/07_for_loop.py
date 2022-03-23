@@ -19,3 +19,9 @@ print(alle_zahlen_positiv)
 print(alle_zahlen_negativ)
 print('- Summe aller Zahlen:', alle_zahlen_summe)
 print('- Anzahl der pos. Zahlen:', anzahl_zahlen_positiv)
+
+for x in range(10):
+    if x == 5:
+        break  # exits the loop
+    else:
+        print(x)
