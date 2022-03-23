@@ -2,18 +2,21 @@
 # payment_method = True
 # items = 5
 
-age = 35
+age = 18
 paymnet_method = True
-items = 5
-nicht_erfuellt = []
+items = 2
+nicht_erfuellt = ""
 
 if not age >= 18:
-    nicht_erfuellt.append('Du bist zu jung')
+    nicht_erfuellt += '- Du bist zu jung\n'
 
 if not paymnet_method:
-    nicht_erfuellt.append('Bezahlmethode nicht vorhanden')
+    nicht_erfuellt += '- Bezahlmethode nicht vorhanden\n'
 
-if items > 0:
-    nicht_erfuellt.append('Du musst Produkte abholen')
+if not items > 0:
+    nicht_erfuellt += '- Du musst Produkte auswählen\n'
 
-print('Folgende Anforderungen wurden nicht erfüllt:', nicht_erfuellt)
+if not len(nicht_erfuellt):
+    print('Bitte zur Kasse')
+else:
+    print('Folgende Anforderungen wurden nicht erfüllt:\n' + nicht_erfuellt)

@@ -1,0 +1,7 @@
+teilnehmer_liste = sorted(["Thomas", "Ingo", "Sara", "Lena", "Julia", "Sven", "Frank"])
+print(teilnehmer_liste)
+print(teilnehmer_liste[0])
+print(teilnehmer_liste[1])
+print(teilnehmer_liste[-1])
+print(teilnehmer_liste[:4])
+print(teilnehmer_liste[:6:2])
