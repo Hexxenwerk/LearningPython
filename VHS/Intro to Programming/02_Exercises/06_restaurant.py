@@ -72,6 +72,7 @@ for num, rr in sorted(menu.items()):
     if rr.get('type') == 'food':
         print(f'{num:-4}. {rr["category"]:10} {rr["name"]:25} Preis in € {rr["price"]:>5.2f}')
 
+# Ask for customer input for dishes
 while True:
     selection = int(input('Selektion: '))
     if not selection:
@@ -86,6 +87,7 @@ for num, rr in sorted(menu.items()):
     if rr.get('type') == 'drink':
         print(f'{num:-4}. {" ":10} {rr["name"]:25} Preis in € {rr["price"]:>5.2f}')
 
+# Ask for customer input for drinks
 while True:
     selection = int(input('Selektion: '))
     if not selection:
